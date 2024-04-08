@@ -200,7 +200,7 @@ const Body = (props) => {
             { 
   
             filteredData?.map((item, i) => {
-            return (<div key={i} className="bg-white w-[330px] rounded-3xl flex flex-col h-auto cursor-pointer" onClick={()=> {openItemModal(item.id)}}>
+            return (<div key={i} className="bg-white w-[330px] rounded-3xl md:m-0 m-auto flex flex-col h-auto cursor-pointer" onClick={()=> {openItemModal(item.id)}}>
                     <div className="w-full h-56"><img className="w-full h-full rounded-t-3xl" src={item.img} alt="lamp" /></div>
                     <div className="p-6 flex flex-col gap-2">
                         <div className="h-[100px]">
