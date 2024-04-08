@@ -215,7 +215,7 @@ const Body = (props) => {
     </div>
     {modal &&  
     <div className="modalOverlay z-40">
-            <div className="modal z-50 md:rounded-lg flex flex-col gap-5 h-[100%] w-full lg:w-[50%] lg:h-[75vh]">
+            <div className="modal z-50 md:rounded-lg flex flex-col gap-5 h-[102%] w-full lg:w-[50%] lg:h-[75vh] m-0 md:m-auto">
                 <div className="flex flex-row justify-between mt-2">
                     <h1 className="text-2xl font-bold">{item[0].title}</h1>
                     <button onClick={closeModal}>Back</button>
