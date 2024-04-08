@@ -93,13 +93,15 @@ const Body = (props) => {
         setTimeout(()=> {
             setLoading(false);
             if(balance < itemPrice) {
-                setInsufficient(true)
+                setInsufficient(true);
+                setModal(false);
             }
 
             if(balance >= itemPrice) {
                 let amountRemain = balance - itemPrice;
                 setBalance(amountRemain);
                 setSuccessful(true)
+                setModal(false);
             }
 
         }, 3000)
