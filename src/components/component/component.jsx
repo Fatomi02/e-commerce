@@ -1,28 +1,25 @@
 import React, {useState, useEffect} from "react";
-import axios from "axios";
+// import axios from "axios";
 import Body from "../body/body";
+import Data from "../../data";
 
 
 
 const Component = () => {
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
-    const [error, setError] = useState();
+    // const [error, setError] = useState();
     const [searchValue, setSearchValue] = useState("");
 
 
     useEffect(()=> {
-        axios.get('http://localhost:4000/item').then((res)=> {
-            setData(res.data)
-            setFilteredData(res.data)
-        }).catch((error)=> {
-            setError(error)
-        })
+      setData(Data);
+      setFilteredData(Data);
     }, [])
 
-    if(error) {
-        return <h1 className="text-center text-4xl">{error.message}</h1>
-    }  
+    // if(error) {
+    //     return <h1 className="text-center text-4xl">{error.message}</h1>
+    // }  
 
     const search = (value) => {
         setSearchValue(value);
@@ -61,7 +58,7 @@ const Component = () => {
             </ul>
          </div>
         </nav>
-        <Body search={filteredData} data={data} error={error} />
+        <Body search={filteredData} data={data} />
     </>)
 }
 

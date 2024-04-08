@@ -5,13 +5,11 @@ import { Balance } from "../body/balance";
 const Body = (props) => {
     let search = props.search;
     let originalData = props.data;
-    let originalError = props.error;
 
     const [balance, setBalance] = useState()
     const [item, setItem] = useState();
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState();
-    const [error, setError] = useState();
     const [modal, setModal] = useState(false);
     const [getCondition, setGetCondition] = useState("")
     const [getLocation, setGetLocation] = useState("")
@@ -23,8 +21,7 @@ const Body = (props) => {
 
     useEffect(()=> {
         setData(originalData)
-        setError(originalError)
-    }, [originalData, originalError])
+    }, [originalData])
 
     useEffect(()=> {
         setFilteredData(search)
@@ -107,9 +104,9 @@ const Body = (props) => {
 
         }, 3000)
     }
-    if(error) {
-        return <h1 className="text-center text-4xl">{error.message}</h1>
-    }  
+    // if(error) {
+    //     return <h1 className="text-center text-4xl">{error.message}</h1>
+    // }  
 
     if(loading) {
         return <>
