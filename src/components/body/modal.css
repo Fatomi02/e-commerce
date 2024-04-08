@@ -9,12 +9,13 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-   touch-action: none;
+    touch-action: none;
 }
 
 .modal {
     background: #fff;
     padding: 1.5rem;
+    overflow-y: auto;
     position: relative;
 }
 
