@@ -151,9 +151,9 @@ const Body = (props) => {
         <h1>Furniture</h1>
         <h1 className="mr-6 text-2xl">Balance: ${balance}</h1>
     </div>
-    <div className="w-[98%] pr-8 pl-8 m-auto">
+    <div className="w-[98%] pr-4 pl-4 m-auto">
         <div className="flex lg:flex-row align-middle flex-col">
-         <div className="flex flex-col md:flex-row lg:flex-row align-middle lg:w-[80%] gap-4 lg:gap-10 w-[100%]">
+         <div className="flex flex-col md:flex-row lg:flex-row align-middle gap-4 lg:gap-10 w-[100%]">
             <span className="text-xl"><b>Filter By</b></span>
             <div className="lg:ml-6 flex md:flex-row gap-3 flex-col">
                 <div className="flex flex-row gap-3">
@@ -187,7 +187,7 @@ const Body = (props) => {
             </div>
           </div> 
 
-            <div className="flex flex-row gap-10 lg:w-[20%] mt-5 lg:mt-0 w-[100%]">
+            <div className="flex flex-row gap-10 mt-5 lg:mt-0 w-[100%] lg:w-[40%]">
                 <span className="text-xl"><b>Sort By</b></span>
                 <div className="gap-4 flex flex-row">
                     <button className="text-center pr-2 pl-2 md:pr-4 md:pl-4 bg-black text-white h-8 rounded-md" onClick={sortByLowPrice}>Low Price</button>
@@ -196,11 +196,11 @@ const Body = (props) => {
             </div> 
         </div>
 
-        <div className="flex flex-row mt-8 gap-8 flex-wrap">
+        <div className="flex flex-col md:flex-row md:justify-center justify-center mt-8 gap-8 flex-wrap">
             { 
   
             filteredData?.map((item, i) => {
-            return (<div key={i} className="bg-white w-[330px] rounded-3xl md:m-0 m-auto flex flex-col h-auto cursor-pointer" onClick={()=> {openItemModal(item.id)}}>
+            return (<div key={i} className="bg-white w-[320px] h-[420px] rounded-3xl md:m-0 m-auto flex flex-col cursor-pointer" onClick={()=> {openItemModal(item.id)}}>
                     <div className="w-full h-56"><img className="w-full h-full rounded-t-3xl" src={item.img} alt="lamp" /></div>
                     <div className="p-6 flex flex-col gap-2">
                         <div className="h-[100px]">
@@ -215,14 +215,14 @@ const Body = (props) => {
     </div>
     {modal &&  
     <div className="modalOverlay">
-            <div className="modal md:rounded-lg flex flex-col gap-5 h-[103%] w-full lg:w-[50%] lg:h-[75vh] m-0 md:m-auto">
-                <div className="flex flex-row justify-between mt-2">
+            <div className="modal md:rounded-lg flex flex-col h-[103%] mt-8 mb-8 md:h-[100%] lg:h-[auto] gap-5 w-full lg:w-[55%]">
+                <div className="flex flex-row justify-between mt-2 pl-0 pr-4">
                     <h1 className="text-2xl font-bold">{item[0].title}</h1>
                     <button onClick={closeModal}>Back</button>
                 </div>
-                <div className="flex flex-col gap-6 lg:flex-row">
-                    <img className="lg:h-[580px] lg:w-[450px] md:h-[580px]" src={item[0].img} alt="item-img" />
-                    <div>
+                <div className="flex flex-col gap-6 lg:flex-row w-[100%]">
+                    <img className="lg:h-[inherit] w-[100%] lg:w-[50%] md:h-[580px]" src={item[0].img} alt="item-img" />
+                    <div className="">
                         <div>
                             <h2 className="text-xl font-medium mb-3">Description</h2>
                             <p className="font-normal">{item[0].description}</p> <br />
@@ -240,9 +240,9 @@ const Body = (props) => {
                         <div className="mt-6">
                             <h2 className="text-xl font-medium mb-3">Payment and delivery</h2> <br />
                             <div className="border-t-[1px] p-1 pt-6 pb-6 flex flex-row justify-between align-middle">
-                                <h1 className="text-2xl text-black font-bold">{item[0].price}.00 USD</h1>
+                                <h1 className="text-xl leading-loose text-black font-bold">{item[0].price}.00 USD</h1>
                                 <button className="border-none text-blue-800">Add to Cart</button>
-                                <button className="p-8 pt-2 pb-2 rounded-2xl bg-blue-800 text-white" onClick={()=> buy(item[0].price)}>Buy</button>
+                                <button className="p-6 pt-2 pb-2 rounded-2xl bg-blue-800 text-white" onClick={()=> buy(item[0].price)}>Buy</button>
                             </div>
                         </div>
 

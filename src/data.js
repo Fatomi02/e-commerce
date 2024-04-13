@@ -188,7 +188,7 @@ const Data = [
         manufacture: "cooper",
         description: "This Lack table in white is easy to match with other finishings. Thanks to the unique construction, it's easy to assemble, lift and move around - and we can keep the prices down, so your spirits go up."
 
-    }  
+    } ,
 ]
 
 export default Data;
